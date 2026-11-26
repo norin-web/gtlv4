@@ -274,15 +274,6 @@ h1, h2, h3, h4 { text-wrap: balance; }
 @media (min-width: 640px) { .strip { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .strip { grid-template-columns: repeat(4, 1fr); } .strip__item { max-width: none; } }
 
-/* pricing */
-.price { display: flex; flex-direction: column; gap: 20px; padding: 20px; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--white); }
-.price__art { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--r-md); }
-.price__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.price__plan { font-weight: 600; color: var(--muted); }
-.price__n { font-family: var(--display); font-size: clamp(28px, 2.6vw, 36px); font-weight: 700; font-variant-numeric: tabular-nums; }
-.price__n span { font-family: var(--body); font-size: 16px; font-weight: 400; color: var(--muted); }
-.price__badge { padding: 4px 12px; border-radius: var(--r-sm); background: var(--accent); color: var(--on-dark); font-size: 14px; font-weight: 600; white-space: nowrap; }
-@media (min-width: 900px) { .price { padding: 28px; } }
 
 /* faq */
 .faq { display: grid; gap: 12px; }

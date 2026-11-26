@@ -2,7 +2,7 @@ import { app, features, rules, screens } from "../content/site";
 import { img } from "../utils/img";
 import Btn from "../components/Btn";
 import Reveal from "../components/Reveal";
-import { CheckList, DownloadBand, FaqSection, PageHero, PartTiles, Phone, Pricing, StepsAccordion } from "../components/Blocks";
+import { CheckList, DownloadBand, FaqSection, PageHero, PartTiles, Phone, StepsAccordion } from "../components/Blocks";
 
 export default function Home() {
   return (
@@ -106,7 +106,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Pricing />
       <FaqSection />
       <DownloadBand />
     </>

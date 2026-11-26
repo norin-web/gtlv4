@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router";
 import { Check, Minus, Plus, Search, Sparkles, Star, MessageSquare, Users } from "lucide-react";
-import { app, faq as allFaq, included, parts, steps } from "../content/site";
+import { app, faq as allFaq, parts, steps } from "../content/site";
 import { img } from "../utils/img";
 import Btn from "./Btn";
 import Reveal from "./Reveal";
@@ -141,7 +141,7 @@ export function FaqList({ items = allFaq.slice(0, 5) }: { items?: { q: string; a
 /** Heading on the left, accordion on the right. */
 export function FaqSection() {
   return (
-    <section className="section">
+    <section className="section band band--soft">
       <div className="container split2 split2--faq">
         <div className="stack">
           <h2 className="h2">Questions before you start</h2>
@@ -149,33 +149,6 @@ export function FaqSection() {
           <Btn to="/support" variant="outline">Open Support</Btn>
         </div>
         <FaqList />
-      </div>
-    </section>
-  );
-}
-
-/** Subscription block — what the paywall in the app offers, with its own artwork. */
-export function Pricing() {
-  return (
-    <section className="section band band--soft">
-      <div className="container split2">
-        <Reveal className="stack">
-          <h2 className="h2">One plan with everything in it</h2>
-          <p className="muted">Write unlimited letters, get AI writing help and see every update from the facility.</p>
-          <CheckList items={included} />
-        </Reveal>
-        <Reveal className="price" delay={80}>
-          <img className="price__art" src={img("/images/paywall-hero.webp")} alt="" width={963} height={920} loading="lazy" />
-          <div className="price__row">
-            <div>
-              <p className="price__plan">{app.plan}</p>
-              <p className="price__n">{app.price.split(" / ")[0]} <span>per week</span></p>
-            </div>
-            <span className="price__badge">Full access</span>
-          </div>
-          <Btn href={app.url} className="btn--block">Download on the App Store</Btn>
-          <p className="small muted">Paid through Apple in the app. Restore is on the paywall.</p>
-        </Reveal>
       </div>
     </section>
   );

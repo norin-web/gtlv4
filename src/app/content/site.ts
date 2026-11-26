@@ -2,7 +2,7 @@
 // Facts come only from the app design (screens and paywall). The app is not in the
 // App Store yet (iTunes lookup for the ID returns 0 results, 2026-11-26): after
 // release, refresh `app` from https://itunes.apple.com/lookup?id=6831627349 and
-// check the price against the live listing. When the owner's Privacy Policy and
+// check the facts against the live listing. When the owner's Privacy Policy and
 // Terms arrive, check every claim below against them.
 
 export const site = {
@@ -17,9 +17,6 @@ export const app = {
   id: "6831627349",
   url: "https://apps.apple.com/app/id6831627349",
   platform: "iPhone",
-  // from the paywall in the app design
-  plan: "Weekly",
-  price: "$5.99 / week",
 };
 
 export const nav = [
@@ -115,9 +112,6 @@ export const screens = [
   { img: "/images/screen-facility.webp", label: "Add contact" },
 ];
 
-// Paywall: "Write unlimited letters, get AI writing help and see every update from the facility."
-export const included = ["Unlimited letters", "AI writing help", "Every update from the facility"];
-
 // App page — tabs that swap the phone screen
 export const tour = [
   { tag: "Messages", title: "All your conversations", text: "One list with the facility under each name, the last line of the letter and the day it came. Filter by All, Unread or Favorites.", img: "/images/screen-messages.webp" },
@@ -132,7 +126,6 @@ export const tour = [
 export const specs: [string, string][] = [
   ["Made for", "iPhone"],
   ["Developer", site.operator],
-  ["Full access", `${app.plan}, ${app.price}`],
   ["Payment", "In-app purchase through Apple"],
   ["Language", "English"],
 ];
