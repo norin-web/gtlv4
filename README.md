@@ -9,7 +9,7 @@ pnpm install
 pnpm dev
 ```
 
-Open http://localhost:5173/gtlv4/.
+Open http://localhost:5173/.
 
 ## Deploy
 
@@ -17,9 +17,9 @@ Every push to `main` builds and publishes to GitHub Pages through `.github/workf
 (Settings → Pages → Source must be **GitHub Actions**). The workflow copies `index.html` to `404.html`
 so direct links to inner pages work.
 
-The site is served at `https://norin-web.github.io/gtlv4/`, so `vite.config.ts` has `base: "/gtlv4/"`.
-When a custom domain is attached, change `base` to `"/"` **and** add `public/CNAME` with the domain in the
-same commit — otherwise every asset 404s and the page is blank.
+The site is served at `https://gettingoutapp.site` (domain in `public/CNAME`), so `vite.config.ts` has
+`base: "/"`. If the domain is ever removed, change `base` back to `"/gtlv4/"` in the same commit that
+deletes `public/CNAME`, otherwise every asset 404s and the page is blank.
 
 ## Content
 
