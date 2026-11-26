@@ -1,9 +1,9 @@
 // Every brand / app fact lives here, so names, IDs and emails are never duplicated.
-// Facts come only from the app design (screens and paywall). The app is not in the
-// App Store yet (iTunes lookup for the ID returns 0 results, 2026-11-26): after
+// Facts come only from the app design (screens and paywall) and the owner's Privacy
+// Policy and Terms of Use (content/legal.ts, checked 2026-11-26). The app is not in
+// the App Store yet (iTunes lookup for the ID returns 0 results, 2026-11-26): after
 // release, refresh `app` from https://itunes.apple.com/lookup?id=6831627349 and
-// check the facts against the live listing. When the owner's Privacy Policy and
-// Terms arrive, check every claim below against them.
+// check the facts against the live listing.
 
 export const site = {
   brand: "Getting Out",
@@ -11,6 +11,9 @@ export const site = {
   year: new Date().getFullYear(),
   operator: "Evaristo Verastegui",
   tagline: "Messages to family, through the facility.",
+  // Terms §5–6 and Privacy §19: independent operation and the trademark agreement.
+  disclaimer:
+    "Getting Out is developed and operated independently by Evaristo Verastegui. It is not a government agency, a correctional authority or an official representative of any correctional institution. The GTL and GettingOut names and trademarks belong to their owners. The developer represents that a Trademark Use and Application Distribution Agreement has been signed with Global Tel*Link Corporation (d/b/a ViaPath Technologies). This does not make the app an official service of GTL or ViaPath, or endorsed by them.",
 };
 
 export const app = {
@@ -75,7 +78,7 @@ export const steps = [
     meta: "Add contact, step 2 of 3",
     items: [
       ["Search by name", "Type the person’s name."],
-      ["Check the result", "It shows the inmate ID and housing unit."],
+      ["Check the result", "It shows the inmate ID and housing unit. Results can be incomplete, so check the details."],
     ],
   },
   {
@@ -101,7 +104,7 @@ export const steps = [
 export const rules = [
   ["Reviewed and recorded", "The chat says it plainly: messages are reviewed and recorded by the facility."],
   ["Statuses you can see", "Requests and letters show when they’re waiting for facility review."],
-  ["Read receipts", "A sent letter shows when it was read."],
+  ["Not a delivery receipt", "A status like Read is what the app shows. It isn’t separate proof that the letter was received."],
 ];
 
 // "A closer look" strip
@@ -115,9 +118,9 @@ export const screens = [
 // App page — tabs that swap the phone screen
 export const tour = [
   { tag: "Messages", title: "All your conversations", text: "One list with the facility under each name, the last line of the letter and the day it came. Filter by All, Unread or Favorites.", img: "/images/screen-messages.webp" },
-  { tag: "Chat", title: "Letters with their status", text: "The chat shows when a letter was read or is waiting for facility review, and offers short replies to start from.", img: "/images/screen-chat.webp" },
+  { tag: "Chat", title: "Letters with their status", text: "Each letter shows its status, such as Read or Waiting for facility review, and the chat offers short replies to start from.", img: "/images/screen-chat.webp" },
   { tag: "Writing help", title: "A draft when you need one", text: "Describe what you want to say. Make the draft shorter or warmer, then put it into the chat.", img: "/images/screen-writing.webp" },
-  { tag: "AI chats", title: "Drafts you can come back to", text: "Earlier writing sessions are kept by day, with who each one was for.", img: "/images/screen-aihistory.webp" },
+  { tag: "AI chats", title: "Drafts you can come back to", text: "Earlier writing sessions are kept on your iPhone by day, with who each one was for. What you send for a draft also goes to OpenAI.", img: "/images/screen-aihistory.webp" },
   { tag: "Requests", title: "Every request, step by step", text: "Sent, Facility review and Approved, with the inmate ID and relationship on the card.", img: "/images/screen-requests.webp" },
   { tag: "Add contact", title: "Facility, person, request", text: "Pick the facility, find the person by name, send the request.", img: "/images/screen-facility.webp" },
   { tag: "Favorites", title: "The people you write to most", text: "A Favorites tab at the top of Messages.", img: "/images/screen-favorites.webp" },
@@ -127,16 +130,19 @@ export const specs: [string, string][] = [
   ["Made for", "iPhone"],
   ["Developer", site.operator],
   ["Payment", "In-app purchase through Apple"],
+  ["Age", "16 and older"],
   ["Language", "English"],
 ];
 
 export const faq = [
   { q: "How do I add someone?", c: "Add someone", a: "Tap the plus button, choose the facility, find the person by name and send a contact request with your relationship." },
   { q: "Why is my request still pending?", c: "Request still pending", a: "The facility reviews every contact request. The Requests tab shows where yours is: Sent, Facility review or Approved. You can cancel it or send the facility a reminder." },
-  { q: "Who can read my messages?", c: "Who reads messages", a: "Messages are reviewed and recorded by the facility. The chat says so at the top, so write with that in mind." },
-  { q: "What does writing help do?", c: "Writing help", a: "It drafts a message from a short description. Ask for changes, make it shorter or warmer, then tap Use in chat to put it into the message box." },
-  { q: "Why hasn’t my letter arrived yet?", c: "Letter not arrived", a: "A letter can wait in facility review. The chat shows Waiting for facility review until it moves on, and Read once it has been read." },
-  { q: "How do I cancel my subscription?", c: "Cancel subscription", a: "In-app subscriptions are managed by Apple. Open Settings on your iPhone, tap your name, then Subscriptions." },
-  { q: "How do I restore a purchase?", c: "Restore a purchase", a: "Open the paywall in the app and tap Restore, signed in with the Apple ID you paid with." },
+  { q: "Who can read my messages?", c: "Who reads messages", a: "Messages are reviewed and recorded by the facility, and the chat says so at the top. They’re also stored on the service’s servers and shown to the person you write to. Don’t treat them as confidential or legally privileged." },
+  { q: "What does writing help do?", c: "Writing help", a: "It drafts a message from a short description, using OpenAI. The app asks for your consent before anything is sent to it. Make the draft shorter or warmer, read it through, then tap Use in chat to put it into the message box. To stop, don’t use writing help and email us about anything already sent." },
+  { q: "Why hasn’t my letter arrived yet?", c: "Letter not arrived", a: "A letter can wait in facility review, and the chat shows Waiting for facility review while it does. Delivery also depends on the facility and the person you write to, so the app can’t promise when a letter arrives. A Read status isn’t separate proof that it was received." },
+  { q: "How do I cancel my subscription?", c: "Cancel subscription", a: "Subscriptions are managed by Apple. Open Settings on your iPhone, tap your name, then Subscriptions. Deleting the app doesn’t cancel a subscription." },
+  { q: "How do I restore a purchase?", c: "Restore a purchase", a: "Open the paywall in the app and tap Restore, signed in with the Apple Account you paid with." },
+  { q: "Do I need an account?", c: "Account", a: "No. The app doesn’t ask for an email or a sign-up." },
+  { q: "How do I delete my data?", c: "Delete my data", a: `Deleting the app may remove what it keeps on your iPhone, such as writing help chats. It doesn’t remove messages on the server, letters people have received, or data held by Apple, Apphud, OpenAI or Google Cloud. To ask for deletion, email ${site.email}. Some data may have to be kept by law.` },
   { q: "How do I keep someone at the top?", c: "Keep someone on top", a: "Use the Favorites tab on the Messages screen." },
 ];

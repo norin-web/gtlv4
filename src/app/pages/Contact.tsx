@@ -41,7 +41,7 @@ export default function Contact() {
         <div className="container split2 split2--form">
           <div className="stack">
             <h2 className="h2">Write to us</h2>
-            <p className="muted">Say which screen you were on, and attach a screenshot in your mail app if it helps. Purchases and refunds are handled by Apple.</p>
+            <p className="muted">Say which screen you were on, and attach a screenshot in your mail app if it helps. Purchases are made through Apple, and refund requests are generally handled by Apple.</p>
             <a className="contact__mail" href={`mailto:${site.email}`}>{site.email}</a>
           </div>
 

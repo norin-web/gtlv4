@@ -44,6 +44,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <p className="footer__note">{site.disclaimer}</p>
         <div className="footer__bottom">
           <span>© {site.year} {site.operator}</span>
           <div className="footer__legal">

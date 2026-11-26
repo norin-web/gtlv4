@@ -62,7 +62,7 @@ export default function HowItWorks() {
           <div className="stack">
             <h2 className="h2">Then, the letters</h2>
             <p className="muted">Each conversation shows the facility, the inmate ID and a note that messages are reviewed and recorded by the facility.</p>
-            <p className="muted">Under each letter you see when it was read, or that it’s waiting for facility review.</p>
+            <p className="muted">Under each letter you see its status, such as Read or Waiting for facility review.</p>
           </div>
           <Reveal className="phonecol">
             <Phone src="/images/screen-chat.webp" alt="Chat screen with letters and their statuses" />

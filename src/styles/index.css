@@ -388,7 +388,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 .ldoc__h { margin-top: 16px; font-family: var(--display); font-size: 20px; font-weight: 700; color: var(--ink); }
 .ldoc__h4 { font-size: 16px; font-weight: 600; color: var(--ink); }
 .ldoc ul { display: grid; gap: 4px; padding-left: 20px; list-style: disc; }
-.ldoc a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+.ldoc a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 
 /* ── footer ───────────────────────────────────────────────── */
 .footer { padding: 56px 0 28px; border-top: 1px solid var(--line); }
@@ -402,6 +402,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 .footer__cols ul { display: grid; gap: 8px; margin-top: 12px; }
 .footer__cols a { display: inline-block; padding: 4px 0; font-size: 15px; overflow-wrap: anywhere; transition: color .2s; }
 .footer__cols a:hover { color: var(--accent-dark); }
+.footer__note { max-width: 880px; padding-bottom: 24px; font-size: 14px; line-height: 1.6; color: var(--muted); }
 .footer__bottom { display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 .footer__legal { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .footer__legal a, .footer__legal button { color: var(--ink-2); padding: 4px 0; }

@@ -29,6 +29,7 @@ export default function About() {
             <h2 className="h2">Why the app exists</h2>
             <p className="muted">Families writing to someone in a facility deal with rules, reviews and waiting. The app can’t change the rules, but it can make each step clear.</p>
             <p className="muted">So every screen answers one question: where is my request, where is my letter, what do I do next.</p>
+            <p className="muted">{site.brand} is independent. It isn’t a government agency, a correctional authority or part of any facility.</p>
           </div>
           <Reveal className="photo photo--short">
             <img src={img("/images/together-close.webp")} alt="A mother and her daughter smiling at a phone" width={2000} height={1333} loading="lazy" />

@@ -8,10 +8,18 @@ import { site } from "../content/site";
 function render(body: string) {
   const out: ReactNode[] = [];
   const linkify = (t: string) =>
-    t.split(/(\S+@\S+\.[a-z]{2,})/gi).map((p, i) => (/@/.test(p) ? <a key={i} href={`mailto:${p}`}>{p}</a> : p));
+    t.split(/(https?:\/\/\S+|\S+@\S+\.[a-z]{2,})/gi).map((p, i) =>
+      /^https?:\/\//.test(p) ? (
+        <a key={i} href={p} target="_blank" rel="noopener noreferrer">{p}</a>
+      ) : /@/.test(p) ? (
+        <a key={i} href={`mailto:${p}`}>{p}</a>
+      ) : (
+        p
+      ),
+    );
   body.split(/\n{2,}/).forEach((b, i) => {
-    if (b.startsWith("## ")) out.push(<h3 key={i} className="ldoc__h">{b.slice(3)}</h3>);
-    else if (b.startsWith("### ")) out.push(<h4 key={i} className="ldoc__h4">{b.slice(4)}</h4>);
+    if (b.startsWith("## ")) out.push(<h2 key={i} className="ldoc__h">{b.slice(3)}</h2>);
+    else if (b.startsWith("### ")) out.push(<h3 key={i} className="ldoc__h4">{b.slice(4)}</h3>);
     else if (b.split("\n").every((l) => l.startsWith("- ")))
       out.push(<ul key={i}>{b.split("\n").map((l, j) => <li key={j}>{linkify(l.slice(2))}</li>)}</ul>);
     else out.push(<p key={i} style={{ whiteSpace: "pre-line" }}>{linkify(b)}</p>);

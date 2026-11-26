@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <PageHero
         title={[["Stay close to family,"], ["\n"], ["wherever they are"]]}
-        sub="Find your loved one’s facility, send a contact request and write to them from your iPhone. Every message goes through the facility’s review."
+        sub="Find your loved one’s facility, send a contact request and write to them from your iPhone. Messages are reviewed and recorded by the facility."
         photo={{ src: "/images/family-couch.webp", alt: "A mother and her daughter reading a message on a phone together", pos: "62% 35%" }}
       >
         <Btn href={app.url} variant="white">Download on the App Store</Btn>
@@ -78,6 +78,7 @@ export default function Home() {
             <h2 className="h2">Writing help, for the hard letters</h2>
             <p className="muted">Describe what you want to say and get a draft. Ask for changes, make it shorter or warmer.</p>
             <p className="muted">Use in chat puts the draft into the message box. You read it, change it and send it yourself.</p>
+            <p className="muted">Drafts are made with OpenAI. The app asks for your consent before sending anything to it.</p>
             <figure className="quote">
               <blockquote>“Help me write a birthday message for my sister.”</blockquote>
               <figcaption>A request on the Writing help screen</figcaption>
